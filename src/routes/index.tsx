@@ -461,8 +461,12 @@ function KrishokMitra() {
                   </motion.div>
                   {i < steps.length - 1 && (
                     <div className="flex items-center justify-center text-primary" aria-hidden="true">
-                      <Icon name="arrow_downward" className="text-4xl md:hidden" />
-                      <Icon name="arrow_forward" className="hidden text-4xl md:block" />
+                      <span className="md:hidden">
+                        <Icon name="arrow_downward" className="text-4xl" />
+                      </span>
+                      <span className="hidden md:block">
+                        <Icon name="arrow_forward" className="text-4xl" />
+                      </span>
                     </div>
                   )}
                 </div>
