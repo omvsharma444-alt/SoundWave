@@ -29,7 +29,30 @@ export const Route = createFileRoute("/")({
 
 type Lang = "en" | "hi" | "kn";
 
-const T: Record<Lang, Record<string, string>> = {
+interface Strings {
+  getStarted: string;
+  scanNow: string;
+  headline: string;
+  sub: string;
+  feat1t: string;
+  feat1d: string;
+  feat2t: string;
+  feat2d: string;
+  feat3t: string;
+  feat3d: string;
+  howTitle: string;
+  step1t: string;
+  step1d: string;
+  step2t: string;
+  step2d: string;
+  step3t: string;
+  step3d: string;
+  featuresTitle: string;
+  stories: string;
+  trust: string;
+}
+
+const T: Record<Lang, Strings> = {
   en: {
     getStarted: "Get Started",
     scanNow: "Scan Your Crop Now",
@@ -516,14 +539,14 @@ function KrishokMitra() {
                   className="rounded-3xl border border-border bg-card p-8 text-center shadow-harvest"
                 >
                   <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-secondary text-5xl" aria-hidden="true">
-                    {testimonials[storyIdx].avatar}
+                    {testimonials[storyIdx]?.avatar}
                   </div>
                   <blockquote className="mt-5 text-xl leading-relaxed text-foreground">
-                    “{testimonials[storyIdx].quote}”
+                    “{testimonials[storyIdx]?.quote}”
                   </blockquote>
                   <figcaption className="mt-5">
-                    <p className="text-xl font-bold text-primary">{testimonials[storyIdx].name}</p>
-                    <p className="text-base text-muted-foreground">{testimonials[storyIdx].place}</p>
+                    <p className="text-xl font-bold text-primary">{testimonials[storyIdx]?.name}</p>
+                    <p className="text-base text-muted-foreground">{testimonials[storyIdx]?.place}</p>
                   </figcaption>
                 </motion.figure>
               </AnimatePresence>
