@@ -226,21 +226,24 @@ function KrishokMitra() {
 
   const testimonials = [
     {
-      avatar: "👨‍🌾",
+      avatar: "face",
+      avatarBg: "bg-leaf-soft text-primary",
       quote:
         "KrishokMitra found leaf blight in my ragi before I could even see it. The treatment plan saved my entire crop this season.",
       name: "Ramesh Gowda",
       place: "Ragi farmer, Mandya",
     },
     {
-      avatar: "👩‍🌾",
+      avatar: "face_3",
+      avatarBg: "bg-accent-soft text-accent-foreground",
       quote:
         "I sold my tomatoes directly to a buyer in Bengaluru — ₹4 more per kilo than the middleman ever gave me.",
       name: "Lakshmamma",
       place: "Vegetable farmer, Tumakuru",
     },
     {
-      avatar: "👴",
+      avatar: "elderly",
+      avatarBg: "bg-secondary text-secondary-foreground",
       quote:
         "The app speaks to me in Kannada. I just hold the phone to my crop and listen. Even my father uses it without help.",
       name: "Siddu Patil",
