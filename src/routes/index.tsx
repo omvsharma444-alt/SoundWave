@@ -541,8 +541,11 @@ function KrishokMitra() {
                   transition={{ duration: 0.4 }}
                   className="rounded-3xl border border-border bg-card p-8 text-center shadow-harvest"
                 >
-                  <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-secondary text-5xl" aria-hidden="true">
-                    {testimonials[storyIdx]?.avatar}
+                  <div
+                    className={`mx-auto grid h-20 w-20 place-items-center rounded-full ${testimonials[storyIdx]?.avatarBg}`}
+                    aria-hidden="true"
+                  >
+                    <Icon name={testimonials[storyIdx]?.avatar ?? "face"} className="text-5xl" />
                   </div>
                   <blockquote className="mt-5 text-xl leading-relaxed text-foreground">
                     “{testimonials[storyIdx]?.quote}”
@@ -554,7 +557,7 @@ function KrishokMitra() {
                 </motion.figure>
               </AnimatePresence>
             </div>
-            <div className="mt-6 flex justify-center gap-2" role="tablist" aria-label="Choose testimonial">
+            <div className="mt-6 flex justify-center gap-1" role="tablist" aria-label="Choose testimonial">
               {testimonials.map((tm, i) => (
                 <button
                   key={tm.name}
@@ -563,10 +566,14 @@ function KrishokMitra() {
                   aria-selected={i === storyIdx}
                   aria-label={`Show testimonial from ${tm.name}`}
                   onClick={() => setStoryIdx(i)}
-                  className={`h-3.5 min-h-11 w-3.5 rounded-full p-0 transition-all ${
-                    i === storyIdx ? "w-9 bg-primary" : "bg-primary/25 hover:bg-primary/50"
-                  }`}
-                />
+                  className="grid h-11 w-11 place-items-center"
+                >
+                  <span
+                    className={`h-3.5 rounded-full transition-all ${
+                      i === storyIdx ? "w-9 bg-primary" : "w-3.5 bg-primary/25 hover:bg-primary/50"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           </div>
@@ -664,7 +671,7 @@ function KrishokMitra() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with KrishokMitra on WhatsApp"
-        className={`fixed right-4 z-50 grid h-14 w-14 place-items-center rounded-full bg-[oklch(0.65_0.19_155)] text-white shadow-harvest-lg transition-all hover:scale-110 ${
+        className={`fixed right-4 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-primary-foreground shadow-harvest-lg transition-all hover:scale-110 ${
           showStickyCta ? "bottom-24" : "bottom-5"
         }`}
       >
